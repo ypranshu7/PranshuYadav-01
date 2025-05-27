@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>House Price Prediction</h1>
+        <form action="/predict" method="post">
+            <label for="area">Area (sqft):</label>
+            <input type="text" name="area" required>
+
+            <label for="bedrooms">Bedrooms:</label>
+            <input type="text" name="bedrooms" required>
+
+            <label for="bathrooms">Bathrooms:</label>
+            <input type="text" name="bathrooms" required>
+
+            <label for="stories">Stories:</label>
+            <input type="text" name="stories" required>
+
+            <label for="mainroad">Mainroad (yes/no):</label>
+            <input type="text" name="mainroad" required>
+
+            <label for="guestroom">Guestroom (yes/no):</label>
+            <input type="text" name="guestroom" required>
+
+            <label for="basement">Basement (yes/no):</label>
+            <input type="text" name="basement" required>
+
+            <label for="hotwater">Hotwater Heating (yes/no):</label>
+            <input type="text" name="hotwater" required>
+
+            <label for="airconditioning">Airconditioning (yes/no):</label>
+            <input type="text" name="airconditioning" required>
+
+            <label for="parking">Parking (yes/no):</label>
+            <input type="text" name="parking" required>
+
+            <label for="prefarea">Prefarea (yes/no):</label>
+            <input type="text" name="prefarea" required>
+
+            <label for="furnishingstatus">Furnishing status (furnished/semi-furnished/unfurnished):</label>
+            <input type="text" name="furnishingstatus" required>
+
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if prediction_text %}
+            <h2>{{ prediction_text }}</h2>
+        {% endif %}
+    </div>
+</body>
+</html>
